@@ -7,6 +7,12 @@
         public string Name { get; set; }
         public Boolean IsCompleted { get; set; }
         public DateTime CreationDate { get; set; }
+        
+
+        public Task()
+        {
+
+        }
     }
 
 }
