@@ -26,6 +26,18 @@ namespace Dot_Net_To_Do_List.Controllers
               return View(await _context.Task.ToListAsync());
         }
 
+        // GET: Tasks/ShowSearchForm
+        public async Task<IActionResult> ShowSearchForm()
+        {
+            return View();
+        }
+
+        // GET: Tasks/ShowSearchResults
+        public async Task<IActionResult> ShowSearchResults(String SearchPhrase)
+        {
+            return View("Index", await _context.Task.Where( j => j.Name.Contains(SearchPhrase)).ToListAsync());
+        }
+
         // GET: Tasks/Details/5
         public async Task<IActionResult> Details(int? id)
         {
